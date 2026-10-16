@@ -1,0 +1,22 @@
+# Small illustrative list written for this portfolio edition.
+# Not derived from an employer dataset; tune it for a separately approved use case.
+china_actors: []
+financiers:
+  - World Bank
+  - African Development Bank
+  - IFC
+institutions:
+  - Federal Ministry of Works
+  - Federal Ministry of Power
+  - Central Bank of Nigeria
+companies: []
+fiscal_policy_terms:
+  - supplementary budget
+  - import duty
+macro_indicators:
+  - external reserves
+  - monetary policy rate
+sector_domains:
+  - water treatment
+  - solar power
+  - electricity transmission

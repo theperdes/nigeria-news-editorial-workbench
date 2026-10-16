@@ -1,0 +1,775 @@
+# Illustrative portfolio heuristics, not calibrated accuracy or a company policy.
+thresholds:
+  high: 30
+  medium: 20
+  low: 7
+  min_relevance_score: 20
+  max_article_age_days: 3
+  min_article_text_chars: 400
+
+selection_limits:
+  default: 3
+  project: 14
+  power_energy: 7
+  oil_gas: 7
+  agriculture_industry: 5
+  finance_policy: 7
+  politics_governance: 8
+  security_risk: 4
+  market_logistics: 4
+  bilateral_multilateral: 4
+  other: 2
+
+selection_minimums: {}
+
+lane_rules:
+  politics_governance:
+    presidential_actors:
+      - Tinubu
+      - President Tinubu
+      - President Bola Tinubu
+      - presidency
+      - State House
+      - Aso Rock
+    itinerary_terms:
+      - visit
+      - visits
+      - visited
+      - trip
+      - travels
+      - travelled
+      - arrives
+      - arrival
+      - returns
+      - departs
+      - leaves
+      - meeting
+      - meets
+      - met with
+      - hosts
+      - hosted
+      - receives
+      - received
+      - delegation
+      - summit
+      - forum
+      - conference
+      - sidelines
+      - state visit
+      - official visit
+      - working visit
+    strong_triggers:
+      - President Bola Tinubu
+      - President Tinubu
+      - Tinubu
+      - presidency
+      - presidential visit
+      - state visit
+      - official visit
+      - working visit
+      - State House
+      - Aso Rock
+      - bilateral meeting
+      - election
+      - elections
+      - 2027
+      - INEC
+      - Peter Obi
+      - Obi
+      - Atiku
+      - Jonathan
+      - NDC
+      - APC
+      - PDP
+      - Labour Party
+      - presidential candidate
+      - consensus candidate
+      - sole aspirant
+      - screening committee
+      - presidential screening
+      - electoral act
+      - primary
+      - primaries
+      - opposition coalition
+      - coalition
+      - party merger
+      - defection
+      - defections
+      - resignation
+      - cabinet reshuffle
+      - ministerial appointment
+      - ministerial nominee
+      - impeachment
+      - Supreme Court
+      - tribunal
+      - EFCC
+      - anti-corruption probe
+    impact_terms:
+      - location
+      - itinerary
+      - travel
+      - visit
+      - meeting
+      - delegation
+      - summit
+      - forum
+      - conference
+      - State House
+      - Aso Rock
+      - investment mission
+      - private capital
+      - foreign investment
+      - investor confidence
+      - financing opportunities
+      - development finance
+      - bilateral cooperation
+      - multilateral cooperation
+      - trade
+      - diplomacy
+      - economic cooperation
+      - policy
+      - reform
+      - budget
+      - fiscal
+      - tax
+      - tariff
+      - subsidy
+      - debt
+      - loan
+      - investment
+      - infrastructure
+      - project
+      - procurement
+      - approval
+      - regulator
+      - state government
+      - local government
+      - National Assembly
+      - Senate
+      - House of Representatives
+    routine_negative:
+      - congratulates
+      - endorsement
+      - endorses
+      - rally
+      - campaign poster
+      - party chieftain
+      - nomination form
+      - screening
+      - courtesy visit
+  bilateral_multilateral:
+    organizations:
+      - ECOWAS
+      - AfCFTA
+      - African Union
+      - AU
+      - WAEMU
+      - UEMOA
+      - West African Power Pool
+      - WAPP
+      - World Bank
+      - AfDB
+      - IFC
+      - EU
+      - European Union
+      - China
+      - United States
+      - U.S.
+      - United Kingdom
+      - UK
+      - Germany
+      - France
+      - Saudi Arabia
+      - UAE
+    regional_policy_triggers:
+      - visa-free
+      - visa waiver
+      - e-visa
+      - free movement
+      - border reopening
+      - border closure
+      - border cooperation
+      - customs union
+      - customs harmonisation
+      - customs harmonization
+      - tariff
+      - non-tariff barrier
+      - rules of origin
+      - trade facilitation
+      - transit permit
+      - single market
+      - regional payment
+      - settlement system
+      - cross-border trade
+      - corridor
+      - regional integration
+    economic_triggers:
+      - presidential visit
+      - state visit
+      - official visit
+      - working visit
+      - bilateral meeting
+      - investment forum
+      - CEO Forum
+      - sidelines
+      - delegation
+      - investment mission
+      - private capital
+      - foreign investment
+      - investor confidence
+      - financing opportunities
+      - development partnership
+      - country programme
+      - country program
+      - investment agreement
+      - export credit
+      - infrastructure cooperation
+      - energy cooperation
+      - trade agreement
+      - MoU
+      - memorandum of understanding
+      - partnership
+      - cooperation
+    routine_negative:
+      - courtesy visit
+      - congratulates
+      - condolence
+      - cultural exchange
+      - goodwill message
+
+weights:
+  sector_keyword: 1
+  project_signal: 3
+  financier: 3
+  institution: 2
+  company: 2
+  location: 1
+  amount: 2
+  distance_or_capacity: 2
+  date_or_deadline: 0
+  combination_signal: 4
+  china_signal: 8
+  election_signal: 10
+  negative_signal: -4
+  routine_politics_signal: -4
+
+caps:
+  sector_keyword: 4
+  project_signal: 12
+  financier: 9
+  institution: 6
+  company: 6
+  location: 4
+  amount: 6
+  distance_or_capacity: 6
+  date_or_deadline: 0
+  combination_signal: 12
+  china_signal: 16
+  election_signal: 20
+
+china_signals:
+  actors: []
+  context:
+    - infrastructure
+    - project
+    - railway
+    - rail
+    - road
+    - bridge
+    - port
+    - airport
+    - power
+    - energy
+    - oil
+    - gas
+    - pipeline
+    - industrial park
+    - loan
+    - financing
+    - investment
+    - debt
+    - contractor
+    - contract
+    - EPC
+    - PPP
+    - concession
+    - trade
+    - bilateral
+    - cooperation
+    - MoU
+
+election_signals:
+  actors:
+    - Peter Obi
+    - Obi
+    - Atiku
+    - Jonathan
+    - Tinubu
+    - President Tinubu
+    - Bola Tinubu
+    - NDC
+    - APC
+    - PDP
+    - Labour Party
+    - LP
+    - opposition
+    - coalition
+  process:
+    - 2027
+    - election
+    - elections
+    - presidential election
+    - presidential candidate
+    - consensus candidate
+    - sole aspirant
+    - screening
+    - screening committee
+    - presidential screening
+    - primary
+    - primaries
+    - nomination
+    - nominates
+    - unveils
+    - clears
+    - cleared
+
+sector_keywords:
+  - infrastructure
+  - road
+  - highway
+  - railway
+  - rail
+  - bridge
+  - transport
+  - port
+  - airport
+  - construction
+  - oil
+  - gas
+  - energy
+  - power
+  - solar
+  - water
+  - agriculture
+  - project
+  - fertiliser
+  - fertilizer
+  - drilling
+  - mining
+  - solid minerals
+  - steel
+  - cement
+  - lithium
+  - submarine cable
+  - data centre
+
+project_signals:
+  - approved
+  - awarded
+  - contract awarded
+  - FEC
+  - Federal Executive Council
+  - financing
+  - loan
+  - facility agreement
+  - export credit
+  - UKEF
+  - AfDB
+  - World Bank
+  - tender
+  - bid
+  - bidding
+  - request for bids
+  - request for proposals
+  - EOI
+  - procurement
+  - PPP
+  - concession
+  - EPC
+  - contractor
+  - rehabilitation
+  - reconstruction
+  - expansion
+  - upgrade
+  - commissioned
+  - launched
+  - groundbreaking
+  - flag off
+  - budget
+  - allocation
+  - supplementary budget
+  - billion
+  - kilometres
+  - kilometers
+  - km
+  - MoU
+  - memorandum of understanding
+  - nearing completion
+  - completion
+  - completed
+  - stalled
+  - delayed
+
+financiers:
+  - UKEF
+  - UK Export Finance
+  - AfDB
+  - African Development Bank
+  - World Bank
+  - IFC
+  - International Finance Corporation
+  - BII
+  - British International Investment
+  - EIB
+  - European Investment Bank
+  - BOI
+  - Bank of Industry
+  - NSIA
+  - China Exim Bank
+  - China Development Bank
+  - Exim Bank
+  - JICA
+  - EU
+  - European Union
+  - Global Gateway
+
+institutions:
+  - Federal Ministry of Works
+  - Federal Ministry of Finance
+  - NPA
+  - Nigerian Ports Authority
+  - NNPC
+  - FAAN
+  - TCN
+  - NRC
+  - LAMATA
+  - ICRC
+  - BPP
+  - NDDC
+  - REA
+  - NSIA
+  - MOFI
+  - INEC
+  - CBN
+  - NCDC
+  - Nigeria Centre for Disease Control
+  - Federal Ministry of Health
+  - WHO
+  - World Health Organization
+  - NCAA
+  - FCDA
+  - FCTA
+  - Chinese embassy
+
+companies: []
+
+locations:
+  - Lagos
+  - Abuja
+  - FCT
+  - Rivers
+  - Kano
+  - Kaduna
+  - Ogun
+  - Abia
+  - Akwa Ibom
+  - Bayelsa
+  - Borno
+  - Katsina
+  - Zamfara
+  - Niger
+  - Kogi
+  - Enugu
+  - Anambra
+  - Apapa
+  - Tin Can
+  - Lekki
+  - Badagry
+  - Calabar
+  - Onne
+  - Port Harcourt
+  - Maiduguri
+
+negative_signals:
+  - sports
+  - football
+  - entertainment
+  - celebrity
+  - gossip
+  - drug
+  - heroin
+  - opinion
+  - claim verification
+
+routine_politics_signals:
+  - endorses
+  - endorsement
+  - nomination form
+  - second term
+  - rally
+  - party chieftain
+  - congratulates
+
+news_types:
+  project_opportunity:
+    - project
+    - contract awarded
+    - awarded
+    - approved
+    - construction
+    - rehabilitation
+    - reconstruction
+    - expansion
+    - upgrade
+    - commissioned
+    - launched
+    - groundbreaking
+    - flag off
+    - EPC
+    - PPP
+    - concession
+  financing_budget:
+    - financing
+    - loan
+    - facility agreement
+    - export credit
+    - budget
+    - allocation
+    - supplementary budget
+    - grant
+    - debt
+    - deficit
+    - capital expenditure
+    - inflation
+    - interest rate
+    - monetary policy
+    - MPC
+    - exchange rate
+    - forex
+    - FX
+    - currency
+    - naira
+    - devaluation
+    - debt service
+    - VAT
+    - excise
+    - levy
+    - sukuk
+    - eurobond
+    - external reserves
+    - foreign reserves
+    - capital inflow
+    - recapitalisation
+    - cash reserve ratio
+    - monetary policy rate
+  policy_regulation:
+    - policy
+    - reform
+    - regulation
+    - tariff
+    - tax
+    - subsidy
+    - customs
+    - local content
+    - import ban
+    - pioneer status
+    - tax credit
+    - windfall tax
+    - fuel import duty
+    - domestic crude supply obligation
+    - single window
+    - fiscal
+    - CBN
+    - Central Bank
+    - monetary policy
+    - public health
+    - emergency
+    - state of emergency
+    - border screening
+    - airport screening
+    - public holiday
+    - public holidays
+    - declares public holiday
+    - declared public holiday
+    - Ministry of Interior
+    - Eid-el-Kabir
+    - Eid al-Adha
+    - Sallah holiday
+  election_politics:
+    - 2027
+    - election
+    - elections
+    - INEC
+    - Peter Obi
+    - Obi
+    - Atiku
+    - Jonathan
+    - NDC
+    - APC
+    - PDP
+    - Labour Party
+    - presidential candidate
+    - consensus candidate
+    - sole aspirant
+    - screening committee
+    - presidential screening
+    - primary
+    - primaries
+    - resignation
+    - opposition
+    - coalition
+    - state of emergency
+    - impeachment
+    - cabinet reshuffle
+    - minister resignation
+    - Supreme Court
+    - tribunal
+    - electoral act
+  security_risk:
+    - attack
+    - attacks
+    - bandit
+    - bandits
+    - Boko Haram
+    - ISWAP
+    - terrorist
+    - terrorism
+    - bomb
+    - bombing
+    - IED
+    - vandalism
+    - insecurity
+    - Ebola
+    - outbreak
+    - epidemic
+    - pandemic
+    - disease outbreak
+    - public health emergency
+    - cholera
+    - Lassa fever
+    - health alert
+    - NCDC
+    - WHO
+    - Federal Ministry of Health
+  market_logistics:
+    - cargo
+    - vessel
+    - throughput
+    - port clearance
+    - demurrage
+    - logistics
+    - import
+    - export
+    - trade
+    - public holiday
+    - public holidays
+    - holiday closure
+    - Sallah holiday
+    - Eid-el-Kabir
+    - Eid al-Adha
+  industrial_investment:
+    - industrial park
+    - manufacturing
+    - factory
+    - plant
+    - processing
+    - production facility
+    - value chain
+  energy_oil_gas:
+    - oil
+    - gas
+    - pipeline
+    - refinery
+    - upstream
+    - downstream
+    - LNG
+  power_renewables:
+    - power
+    - electricity
+    - solar
+    - renewable
+    - mini-grid
+    - transmission
+    - distribution
+  agriculture_value_chain:
+    - agriculture
+    - agribusiness
+    - livestock
+    - dairy
+    - food hub
+    - cold chain
+    - processing
+  multilateral_bilateral:
+    - bilateral
+    - multilateral
+    - state visit
+    - MoU
+    - memorandum of understanding
+    - partnership
+    - cooperation
+  industry_report:
+    - report
+    - study
+    - forecast
+    - outlook
+    - ranking
+
+project_stages:
+  mou:
+    - MoU
+    - memorandum of understanding
+    - signed
+  approved:
+    - approved
+    - FEC
+    - Federal Executive Council
+  awarded:
+    - awarded
+    - contract awarded
+    - contractor
+  financing:
+    - financing
+    - loan
+    - facility agreement
+    - export credit
+  tender:
+    - tender
+    - bid
+    - bidding
+    - request for bids
+    - request for proposals
+    - EOI
+    - procurement
+  under_construction:
+    - construction
+    - under construction
+    - ongoing
+  completion:
+    - completion
+    - completed
+    - commissioned
+    - nearing completion
+  operation:
+    - operational
+    - operations
+    - launched
+  risk_delay:
+    - stalled
+    - delayed
+    - insecurity
+    - vandalism
+    - attack
+    - bombing
+  policy_signal:
+    - policy
+    - reform
+    - budget
+    - allocation
+
+inputs:
+  raw_news_path: data/raw_news.json
+
+outputs:
+  scored_news_path: data/scored_news.json
+  review_candidates_path: data/review_candidates.json
+  selected_news_path: data/selected_news.json

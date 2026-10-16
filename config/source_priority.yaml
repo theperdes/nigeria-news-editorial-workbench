@@ -1,0 +1,157 @@
+default_score: 50
+professional_domain_bonus: 25
+local_detail_bonus: 10
+
+tiers:
+  highest:
+    score: 100
+    sources:
+      - Reuters
+      - Bloomberg
+      - BBC
+      - Premium Times
+      - Premium Times Nigeria
+      - The Punch
+      - Punch
+      - Punch Newspapers
+      - The Guardian Nigeria
+      - Guardian Nigeria
+      - The Guardian Nigeria News
+      - ThisDay
+      - THISDAYLIVE
+      - BusinessDay
+      - BusinessDay NG
+      - Daily Trust
+      - Nairametrics
+      - TheCable
+      - Channels TV
+      - Channels Television
+  high:
+    score: 85
+    sources:
+      - Vanguard
+      - Vanguard News
+      - The Nation
+      - The Nation Newspaper
+      - Leadership
+      - LEADERSHIP Newspapers
+      - Blueprint
+      - Blueprint Newspapers
+      - Arise News
+      - Daily Post
+      - Daily Post Nigeria
+      - Nigerian Tribune
+      - Tribune Online
+      - New Telegraph
+      - Telegraph Nigeria
+      - The Sun Nigeria
+      - Independent Nigeria
+      - Independent Newspaper Nigeria
+  professional:
+    score: 80
+    sources:
+      - Africa Oil+Gas Report
+      - Upstream Online
+      - Petroleum Africa
+      - Energy Voice
+      - Majorwaves Energy Report
+      - Orient Energy Review
+      - Offshore Energy
+      - PV Magazine
+      - ESI Africa
+      - African Energy
+      - Renewables Now
+  lead:
+    score: 65
+    sources:
+      - PM News
+      - P.M. News
+      - Legit.ng
+      - Okay.ng
+      - The Street Journal
+      - Investors King
+      - Hallmark News
+      - WorldStage
+      - News Central Africa
+      - Politics Nigeria
+      - The Whistler
+      - Gazette Nigeria
+      - Peoples Gazette
+      - Peoples Gazette Nigeria
+      - FIJ
+      - FIJ NG
+  discard:
+    score: 30
+    sources:
+      - Headtopics
+      - Opera News
+      - Naija
+
+professional_domain_terms:
+  - oil
+  - gas
+  - power
+  - electricity
+  - solar
+  - renewable
+  - renewables
+  - energy
+  - petroleum
+  - upstream
+  - offshore
+  - pipeline
+  - refinery
+  - ppp
+  - concession
+  - financing
+  - finance
+  - loan
+  - facility
+  - bond
+  - debt
+  - investment
+
+local_detail_terms:
+  - project
+  - contract
+  - contractor
+  - award
+  - awarded
+  - tender
+  - procurement
+  - site
+  - construction
+  - inspection
+  - flag off
+  - commissioned
+  - completion
+  - road
+  - bridge
+  - rail
+  - airport
+  - port
+  - state
+  - local government
+  - lga
+  - governor
+  - commissioner
+  - ministry
+  - regulator
+  - agency
+
+local_detail_sources:
+  - Premium Times
+  - Premium Times Nigeria
+  - The Punch
+  - Punch
+  - Punch Newspapers
+  - The Guardian Nigeria
+  - Guardian Nigeria
+  - The Guardian Nigeria News
+  - ThisDay
+  - THISDAYLIVE
+  - BusinessDay
+  - BusinessDay NG
+  - Daily Trust
+  - Channels TV
+  - Channels Television
