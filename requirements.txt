@@ -1,0 +1,9 @@
+feedparser
+googlenewsdecoder
+openai
+PyYAML
+requests
+trafilatura
+readability-lxml
+lxml
+nicegui>=3.14,<4

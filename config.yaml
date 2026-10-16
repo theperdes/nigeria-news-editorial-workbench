@@ -1,0 +1,205 @@
+# Public portfolio example: broad news topics, no employer watchlist.
+google_news:
+  locale:
+    hl: en-NG
+    gl: NG
+    ceid: NG:en
+  base_query: Nigeria
+  topics:
+    - name: Nigeria topic
+      id: CAAqJQgKIh9DQkFTRVFvSUwyMHZNRFZqWjNZU0JXVnVMVWRDS0FBUAE
+  core:
+    lookback: 1d
+    keywords:
+    - ""
+    - Tinubu
+    - FEC
+    - budget
+    - National Assembly
+    - security
+    - infrastructure
+    - project
+    - construction
+    - road
+    - bridge
+    - railway
+    - port
+    - airport
+    - water
+    - housing
+    - industrial park
+    - power
+    - oil
+    - gas
+    - agriculture
+    - mining
+    - loan
+    - World Bank Nigeria
+    - China Nigeria
+    - CBN
+    - naira
+    - inflation
+  rotation:
+    enabled: true
+    daily_limit: 5
+    default_lookback: 7d
+    schedule:
+      monday:
+        - road_bridge
+        - multilateral_finance
+      tuesday:
+        - railway_transit
+        - power_detail
+        - oil_gas_detail_a
+      wednesday:
+        - port_logistics
+        - agriculture_food
+      thursday:
+        - airport_aviation
+      friday:
+        - water_housing
+        - macro_economic
+      saturday:
+        - industrial_new_infrastructure
+        - politics_governance
+        - bilateral_external
+      sunday:
+        - project_lifecycle
+        - oil_gas_detail_b
+        - social_public_health
+    pools:
+      road_bridge:
+        lookback: 7d
+        keywords:
+          - road construction
+          - road rehabilitation
+          - highway project
+          - bridge construction
+          - flyover
+      railway_transit:
+        lookback: 7d
+        keywords:
+          - railway project
+          - railway construction
+          - light rail
+          - metro project
+          - train station
+      port_logistics:
+        lookback: 7d
+        keywords:
+          - deep seaport
+          - inland dry port
+          - port terminal
+          - port concession
+          - logistics hub
+      airport_aviation:
+        lookback: 7d
+        keywords:
+          - airport expansion
+          - airport terminal
+          - runway rehabilitation
+          - airport concession
+          - FAAN
+      water_housing:
+        lookback: 7d
+        keywords:
+          - water supply project
+          - water treatment plant
+          - dam project
+          - housing project
+          - urban renewal
+      industrial_new_infrastructure:
+        lookback: 7d
+        keywords:
+          - special economic zone
+          - digital infrastructure
+          - data centre
+          - waste management
+          - health infrastructure
+      project_lifecycle:
+        lookback: 7d
+        keywords:
+          - awards contract
+          - approves project
+          - flags off project
+          - tender
+          - PPP
+      multilateral_finance:
+        lookback: 7d
+        keywords:
+          - IFC
+          - AfDB Nigeria
+          - Afreximbank
+          - climate finance
+          - infrastructure finance
+      macro_economic:
+        lookback: 7d
+        keywords:
+          - monetary policy
+          - interest rate
+          - exchange rate
+          - external reserves
+          - eurobond
+      power_detail:
+        lookback: 7d
+        keywords:
+          - TCN
+          - REA
+          - NERC
+          - mini grid
+          - solar
+      oil_gas_detail_a:
+        lookback: 7d
+        keywords:
+          - NUPRC
+          - NMDPRA
+          - NCDMB
+          - refinery
+          - gas processing plant
+      oil_gas_detail_b:
+        lookback: 7d
+        keywords:
+          - pipeline
+          - NNPC
+          - CNG
+          - LNG
+          - oil field
+      agriculture_food:
+        lookback: 7d
+        keywords:
+          - livestock
+          - irrigation
+          - agro processing
+          - cold chain
+          - grain storage
+      politics_governance:
+        lookback: 7d
+        keywords:
+          - State House
+          - INEC
+          - 2027 election
+          - Peter Obi
+          - Atiku
+      bilateral_external:
+        lookback: 7d
+        keywords:
+          - ECOWAS
+          - UK Nigeria investment
+          - China infrastructure
+          - China loan
+          - foreign investment infrastructure
+      social_public_health:
+        lookback: 14d
+        keywords:
+          - Ebola
+          - cholera
+          - Lassa fever
+          - public health
+          - state of emergency
+
+collection:
+  output_path: data/raw_news.json
+  request_timeout_seconds: 15
+  max_items_per_keyword: 25
+  max_article_age_days: 3
+  user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36
