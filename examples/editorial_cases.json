@@ -1,0 +1,83 @@
+{
+  "synthetic": true,
+  "run_date": "2026-06-15",
+  "notice": "Fictional editorial examples. No real events, clients or people. Drafts and reference edits are authored examples, not live model outputs.",
+  "cases": [
+    {
+      "id": "road-proposal",
+      "title": "Fictional authority proposes road rehabilitation subject to funding approval",
+      "source": "Fictional Meadow Bulletin",
+      "url": "https://example.invalid/demo/road-proposal",
+      "fetch_status": "success",
+      "article_text": "The fictional Meadow Works Authority proposed rehabilitating an 18 km road at an estimated cost of NGN 3.2 billion, subject to funding approval. No contractor has been appointed. Expressions of interest would close on 30 June 2026 if the process proceeds.",
+      "decision": "include",
+      "category": "基础设施与项目动态",
+      "final_title": "公路修复拟推进，资金仍待批准",
+      "illustrative_draft": "草甸工程局已批准32亿奈拉道路合同，将修建18公里新公路，承包商月底进场。",
+      "editor_note": "保留拟开展、资金待批和未确定承包商三个边界。rehabilitation 是修复，不是新建；意向征集截止不等于施工进场。",
+      "reference_zh": "虚构的草甸工程局拟以约32亿奈拉修复18公里公路，资金仍待批准，承包商尚未确定。若程序推进，意向征集将于2026年6月30日截止。",
+      "checks": ["proposed ≠ approved / awarded", "NGN 3.2 billion → 32亿奈拉", "rehabilitation → 修复", "EOI deadline ≠ construction start"]
+    },
+    {
+      "id": "road-repeat",
+      "title": "Second fictional outlet repeats the same road proposal",
+      "source": "Fictional Meadow Weekly",
+      "url": "https://example.invalid/demo/road-repeat",
+      "fetch_status": "success",
+      "article_text": "A second fictional outlet repeats the Meadow Works Authority proposal: 18 km of road rehabilitation, an estimated NGN 3.2 billion cost and funding still pending. It adds no new fact to the primary item.",
+      "decision": "exclude",
+      "category": "基础设施与项目动态",
+      "final_title": "同事件重复报道，无新增事实",
+      "illustrative_draft": "",
+      "editor_note": "与 road-proposal 为同一虚构事件，无事实增量。演示采用预设人工排除决定，不声称已运行语义去重模型。",
+      "reference_zh": "",
+      "checks": ["Same event", "No incremental fact", "Exclude from drafting input"]
+    },
+    {
+      "id": "solar-commissioning",
+      "title": "Fictional cooperative commissions a 2 MW solar mini-grid",
+      "source": "Fictional Sunfield Notice",
+      "url": "https://example.invalid/demo/solar-commissioning",
+      "fetch_status": "success",
+      "article_text": "The fictional Sunfield Energy Cooperative commissioned a 2 MW solar mini-grid on 12 June 2026. The announcement did not disclose the tariff, financing amount or number of connected households.",
+      "decision": "include",
+      "category": "电力与新能源",
+      "final_title": "光伏微电网投运，电价尚未披露",
+      "illustrative_draft": "阳田能源合作社计划建设200兆瓦电站，将为数千户家庭大幅降低电费。",
+      "editor_note": "修正2 MW的量级和已经投运的阶段。删除未披露的户数和降低电费承诺，不用主观评价补齐缺失事实。",
+      "reference_zh": "虚构的阳田能源合作社于2026年6月12日投运一座2兆瓦光伏微电网；公告未披露电价、融资额或接入户数。",
+      "checks": ["2 MW ≠ 200 MW", "commissioned → 已投运", "No household count supplied", "No tariff-reduction claim"]
+    },
+    {
+      "id": "promotional-item",
+      "title": "Fictional conference promises transformative opportunities",
+      "source": "Fictional Event Handout",
+      "url": "https://example.invalid/demo/event",
+      "fetch_status": "success",
+      "article_text": "A fictional conference handout promises transformative opportunities and a brighter future. It gives no project decision, budget, implementing organization, procurement step or delivery date.",
+      "decision": "exclude",
+      "category": "其他",
+      "final_title": "宣传性材料，缺少可用事实",
+      "illustrative_draft": "",
+      "editor_note": "没有足够的具体事实支撑简报；不把宣传表态包装成项目机会。",
+      "reference_zh": "",
+      "checks": ["No concrete decision", "No budget or delivery date", "Exclude from drafting input"]
+    },
+    {
+      "id": "failed-fetch",
+      "title": "Fictional headline with no reliable article text",
+      "source": "Fictional Unavailable Page",
+      "url": "https://example.invalid/demo/unavailable",
+      "fetch_status": "request_failed",
+      "article_text": "",
+      "decision": "manual_check",
+      "category": "其他",
+      "final_title": "正文缺失，需人工核查",
+      "illustrative_draft": "",
+      "editor_note": "没有可靠正文，不凭标题补写摘要；留作人工核查，不进入模型输入。",
+      "reference_zh": "",
+      "checks": ["No body text", "No inferred summary", "Manual source check required"]
+    }
+  ]
+}
+
